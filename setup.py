@@ -13,5 +13,10 @@ setup(
     include_package_data=True,
     zip_safe=False,
     install_requires=['Django==1.5'],
+    entry_points={
+        'console_scripts': [
+            'myproject_admin = myproject.manage:main',
+        ],
+    }
 )
 
