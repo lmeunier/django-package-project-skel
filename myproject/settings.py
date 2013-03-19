@@ -154,3 +154,8 @@ LOGGING = {
         },
     }
 }
+
+import os
+if 'MYPROJECT_CONFIG' in os.environ:
+    execfile(os.environ['MYPROJECT_CONFIG'])
+
