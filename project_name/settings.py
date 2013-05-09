@@ -1,4 +1,4 @@
-# Django settings for myproject project.
+# Django settings for {{ project_name }} project.
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -83,7 +83,7 @@ STATICFILES_FINDERS = (
 )
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = 'gzbw^w2h!6(cacsgx2ijfiiujis(mstscu%mgl9tc+mn29kx_f'
+SECRET_KEY = '{{ secret_key }}'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
@@ -102,10 +102,10 @@ MIDDLEWARE_CLASSES = (
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'myproject.urls'
+ROOT_URLCONF = '{{ project_name }}.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
-WSGI_APPLICATION = 'myproject.wsgi.application'
+WSGI_APPLICATION = '{{ project_name }}.wsgi.application'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
@@ -156,6 +156,5 @@ LOGGING = {
 }
 
 import os
-if 'MYPROJECT_CONFIG' in os.environ:
-    execfile(os.environ['MYPROJECT_CONFIG'])
-
+if '{{ project_name|upper }}_CONFIG' in os.environ:
+    execfile(os.environ['{{ project_name|upper }}_CONFIG'])

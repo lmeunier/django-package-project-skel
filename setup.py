@@ -1,22 +1,21 @@
 from setuptools import setup, find_packages
 
-version='0.1.0'
+version = '0.1.0'
 
 setup(
-    name='myproject',
+    name='{{ project_name }}',
     version=version,
     description='Django skeleton project',
     long_description=__doc__,
-    author='Laurent Meunier',
-    author_email='laurent@deltalima.net',
+    author='Foo Bar',
+    author_email='foobar@example.com',
     packages=find_packages(),
     include_package_data=True,
     zip_safe=False,
-    install_requires=['Django==1.5'],
+    install_requires=['Django>=1.5'],
     entry_points={
         'console_scripts': [
-            'myproject_admin = myproject.manage:main',
+            '{{ project_name}}_admin = {{ project_name }}.manage:main',
         ],
     }
 )
-
