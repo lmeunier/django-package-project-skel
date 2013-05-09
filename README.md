@@ -1,7 +1,7 @@
 django-package-project-skel
 ===========================
 
-A Django skeleton project to ease packaging with distribute.
+A Django project template to ease packaging with distribute.
 
 Features
 --------
@@ -13,31 +13,35 @@ Features
 Install
 -------
 
-Clone this repository:
-    
-    $ mkdir -p myproject/src.git/
-    $ git clone https://github.com/lmeunier/django-package-project-skel.git myproject/src.git/
-    
-Create a new virtualenv:
+Create a new virtualenv and install Django:
 
-    $ virtualenv myproject/env/
-    
-Install the skeleton project in the virtualenv:
+    $ mkdir myproject
+    $ cd myproject/
+    myproject/ $ virtualenv env
+    myproject/ $ . ./env/bin/activate
+    (env) myproject/ $ pip install django
 
-    $ . ./myproject/env/bin/activate/
-    (env) $ cd myproject/src/git/
-    (env) src.git $ python setup.py develop
-    
-The skeleton project is now installed in the virtualenv. You can use the `myproject_admin` instead of the classis `manage.py`. The `myproject` folder is a regular Django project. You can use it like any other Django project.
+Start a new Django project using this template:
+
+    (env) myproject/ $ mkdir src
+    (env) myproject/ $ cd src/
+    (env) myproject/src/ $ django-admin.py startproject --template=https://github.com/lmeunier/django-package-project-skel/archive/master.zip myproject
+
+Install your newly created Django project in your virtualenv:
+
+    (env) myproject/src/ $ cd myproject/
+    (env) myproject/src/myproject/ $ python setup.py develop
+
+The skeleton project is now installed in the virtualenv. You can use the `myproject_admin` command instead of the classic `manage.py`. The `myproject` folder is a regular Django project. You can use it like any other Django project.
 
 Create a package
 ----------------
 
 Like any other project with a `setup.py` script:
 
-    (env) src.git $ python setup.py sdist
-    
-This will create a new tarball in the `dist/` folder. You can install the tarball with `pip install myproject-0.1.0.tar.gz`.
+    (env) myproject/src/myproject/ $ python setup.py sdist
+
+This command will create a new tarball in the `dist/` folder. You can install the tarball with `pip install myproject-0.1.0.tar.gz`.
 
 manage.py
 ---------
