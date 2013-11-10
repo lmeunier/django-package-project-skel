@@ -58,6 +58,18 @@ The `manage.py` script is not available when installed with `pip install`, but y
     (env) $ myproject_manage runserver
     etc.
 
+External configuration file
+---------------------------
+
+Configuration becomes more useful if you can store it in a separate file, ideally located outside the actual project package. This makes packaging and distributing your project possible via various package handling tools and finally modifying the configuration file afterwards.
+
+The default `settings.py` provided in this template will load the contents of the file the `MYPROJECT_SETTINGS` environment variable points to. This environment variable can be set on Linux with the `export` command in the shell before starting the server:
+
+    (env) $ export MYPROJECT_SETTINGS=/path/to/config.py
+    (env) $ myproject_manage rusnerver
+
+The configuration files themselves are actual Python files.
+
 Contact
 -------
 
