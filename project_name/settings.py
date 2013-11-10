@@ -85,4 +85,12 @@ STATIC_URL = '/static/'
 # The path to the external file is defined in an environment variable named
 # '{{ project_name|upper }}_CONFIG'.
 if '{{ project_name|upper }}_CONFIG' in os.environ:
-    execfile(os.environ['{{ project_name|upper }}_CONFIG'])
+    external_file = os.environ['{{ project_name|upper }}_CONFIG']
+    import sys
+    if sys.version[0] == "3":
+        # Python 3.x
+        code = compile(open(external_file).read(), external_file, 'exec')
+        exec(code)
+    else:
+        # Python 2.x
+        execfile(external_file)
