@@ -1,10 +1,9 @@
 from setuptools import setup, find_packages
-
-version = '0.1.0'
+from {{ project_name }} import __version__
 
 setup(
     name='{{ project_name }}',
-    version=version,
+    version=__version__,
     description='Django skeleton project',
     long_description=__doc__,
     author='Foo Bar',
