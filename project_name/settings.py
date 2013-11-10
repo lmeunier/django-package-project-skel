@@ -155,9 +155,12 @@ LOGGING = {
     }
 }
 
+# Load configuration from an external file.
+# The path to the external file is defined in an environment variable named
+# '{{ project_name|upper }}_SETTINGS'.
 import os
-if '{{ project_name|upper }}_CONFIG' in os.environ:
-    external_file = os.environ['{{ project_name|upper }}_CONFIG']
+if '{{ project_name|upper }}_SETTINGS' in os.environ:
+    external_file = os.environ['{{ project_name|upper }}_SETTINGS']
     import sys
     if sys.version[0] == "3":
         # Python 3.x
