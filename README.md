@@ -25,7 +25,7 @@ Start a new Django project using this template:
 
     (env) myproject/ $ mkdir src
     (env) myproject/ $ cd src/
-    (env) myproject/src/ $ django-admin.py startproject --template=https://github.com/lmeunier/django-package-project-skel/archive/django-1.5.zip myproject
+    (env) myproject/src/ $ django-admin.py startproject --template=https://github.com/lmeunier/django-package-project-skel/archive/django-1.6.zip myproject
 
 Install your newly created Django project in your virtualenv:
 
