@@ -15,7 +15,7 @@ setup(
     install_requires=['Django>=1.5'],
     entry_points={
         'console_scripts': [
-            '{{ project_name}}_admin = {{ project_name }}.manage:main',
+            '{{ project_name}}_manage = {{ project_name }}.manage:main',
         ],
     }
 )

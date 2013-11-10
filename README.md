@@ -7,7 +7,7 @@ Features
 --------
 
 - the Django project is packagable with distribute
-- replace `manage.py` with `myproject_admin`
+- replace `manage.py` with `myproject_manage`
 - read configuration from an external file
 
 Install
@@ -32,7 +32,7 @@ Install your newly created Django project in your virtualenv:
     (env) myproject/src/ $ cd myproject/
     (env) myproject/src/myproject/ $ python setup.py develop
 
-The skeleton project is now installed in the virtualenv. You can use the `myproject_admin` command instead of the classic `manage.py`. The `myproject` folder is a regular Django project. You can use it like any other Django project.
+The skeleton project is now installed in the virtualenv. You can use the `myproject_manage` command instead of the classic `manage.py`. The `myproject` folder is a regular Django project. You can use it like any other Django project.
 
 Create a package
 ----------------
@@ -46,10 +46,10 @@ This command will create a new tarball in the `dist/` folder. You can install th
 manage.py
 ---------
 
-The `manage.py` script is not available when installed with `pip install`, but you can use the new `myproject_admin` script installed in the `PATH`.
+The `manage.py` script is not available when installed with `pip install`, but you can use the new `myproject_manage` script installed in the `PATH`.
 
-    (env) $ myproject_admin syncdb
-    (env) $ myproject_admin runserver
+    (env) $ myproject_manage syncdb
+    (env) $ myproject_manage runserver
     etc.
 
 Contact
