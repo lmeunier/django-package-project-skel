@@ -25,12 +25,18 @@ Start a new Django project using this template:
 
     (env) myproject/ $ mkdir src
     (env) myproject/ $ cd src/
-    (env) myproject/src/ $ django-admin.py startproject --template=https://github.com/lmeunier/django-package-project-skel/archive/master.zip myproject
+    (env) myproject/src/ $ django-admin.py startproject --template=https://github.com/lmeunier/django-package-project-skel/archive/django-1.5.zip myproject
 
 Install your newly created Django project in your virtualenv:
 
     (env) myproject/src/ $ cd myproject/
     (env) myproject/src/myproject/ $ python setup.py develop
+
+Test your installation:
+
+    (env) myproject/src/myproject/ $ myproject_manage runserver
+
+Go to http://127.0.0.1:8000. If you can see the welcome message `It worked!`, then your installation is ok.
 
 The skeleton project is now installed in the virtualenv. You can use the `myproject_manage` command instead of the classic `manage.py`. The `myproject` folder is a regular Django project. You can use it like any other Django project.
 
