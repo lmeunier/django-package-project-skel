@@ -10,6 +10,17 @@ Features
 - replace `manage.py` with `myproject_admin`
 - read configuration from an external file
 
+Django versions
+---------------
+
+A new branch on this Git repository is created for each Django version. To use this template with Django, you must use the right branch for the Django version you want to use.
+
+| Django version | Branch name | URL |
+|----------------|-------------|-----|
+| Django 1.6.x   | django-1.6  | https://github.com/lmeunier/django-package-project-skel/archive/django-1.6.zip |
+| Django 1.5.x   | django-1.5  | https://github.com/lmeunier/django-package-project-skel/archive/django-1.5.zip |
+
+
 Install
 -------
 
@@ -25,14 +36,23 @@ Start a new Django project using this template:
 
     (env) myproject/ $ mkdir src
     (env) myproject/ $ cd src/
-    (env) myproject/src/ $ django-admin.py startproject --template=https://github.com/lmeunier/django-package-project-skel/archive/master.zip myproject
+    (env) myproject/src/ $ django-admin.py startproject --template=<URL> <myproject>
+
+- Replace `<URL>` with the URL for the Django version you want to use. To know which URL to use, go to [Django versions](#django_versions).
+- Replace `<myproject>` with the name of your project.
 
 Install your newly created Django project in your virtualenv:
 
     (env) myproject/src/ $ cd myproject/
     (env) myproject/src/myproject/ $ python setup.py develop
 
-The skeleton project is now installed in the virtualenv. You can use the `myproject_admin` command instead of the classic `manage.py`. The `myproject` folder is a regular Django project. You can use it like any other Django project.
+Test your installation:
+
+    (env) myproject/src/myproject/ $ myproject_manage runserver
+
+Go to http://127.0.0.1:8000. If you can see the welcome message `It worked!`, then your installation is ok.
+
+The skeleton project is now installed in the virtualenv. You can use the `myproject_manage` command instead of the classic `manage.py`. The `myproject` folder is a regular Django project. You can use it like any other Django project.
 
 Create a package
 ----------------
@@ -51,6 +71,18 @@ The `manage.py` script is not available when installed with `pip install`, but y
     (env) $ myproject_admin syncdb
     (env) $ myproject_admin runserver
     etc.
+
+External configuration file
+---------------------------
+
+Configuration becomes more useful if you can store it in a separate file, ideally located outside the actual project package. This makes packaging and distributing your project possible via various package handling tools and finally modifying the configuration file afterwards.
+
+The default `settings.py` provided in this template will load the contents of the file the `MYPROJECT_SETTINGS` environment variable points to. This environment variable can be set on Linux with the `export` command in the shell before starting the server:
+
+    (env) $ export MYPROJECT_SETTINGS=/path/to/config.py
+    (env) $ myproject_manage rusnerver
+
+The configuration files themselves are actual Python files.
 
 Contact
 -------
