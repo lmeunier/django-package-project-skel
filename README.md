@@ -17,6 +17,7 @@ A new branch on this Git repository is created for each Django version. To use t
 
 | Django version | Branch name | URL |
 |----------------|-------------|-----|
+| Django 1.7.x   | django-1.7  | https://github.com/lmeunier/django-package-project-skel/archive/django-1.7.zip |
 | Django 1.6.x   | django-1.6  | https://github.com/lmeunier/django-package-project-skel/archive/django-1.6.zip |
 | Django 1.5.x   | django-1.5  | https://github.com/lmeunier/django-package-project-skel/archive/django-1.5.zip |
 
