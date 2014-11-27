@@ -11,7 +11,7 @@ setup(
     packages=find_packages(),
     include_package_data=True,
     zip_safe=False,
-    install_requires=['Django>=1.6'],
+    install_requires=['Django>=1.7'],
     entry_points={
         'console_scripts': [
             '{{ project_name}}_manage = {{ project_name }}.manage:main',
