@@ -42,7 +42,7 @@ Start a new Django project using this template:
     (env) myproject/src/ $ django-admin.py startproject --template=<URL> <myproject>
 
 - Replace `<URL>` with the URL for the Django version you want to use. To know
-  which URL to use, go to [Django versions](#django_versions).
+  which URL to use, go to [Django versions](#django-versions).
 - Replace `<myproject>` with the name of your project.
 
 Install your newly created Django project in your virtualenv:
